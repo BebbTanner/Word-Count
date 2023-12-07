@@ -1,14 +1,20 @@
 /*This program should tell the user the exact word count 
-from a text file.*/
+from a text file. I am unsure if I am supposed to provide that file
+or if the user can just create the file.
+
+ok so, it kinda works. Everything is implementing correctly but, I am unsure
+if I need to create a text file or allow the user to create one.*/
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
+#include <string>
+using namespace std;
 
 int main()
 {
 	using namespace std;
 
-	ifStream inputStream;
+	ifstream inputStream;
 
 	char inputFileName[16];
 
@@ -16,7 +22,7 @@ int main()
 	cin >> inputFileName;
 
 	inputStream.open(inputFileName);
-	if (inputStream.fail)
+	if (inputStream.fail())
 	{
 		cout << "input file opening has failed.";
 		exit(1);
@@ -32,7 +38,7 @@ int main()
 
 	cout << "the file contains " << numberOfWords << " words.";
 
-	inputStream.close;
+	inputStream.close();
 
 	return 0;
 
